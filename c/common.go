@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/cpk/currency-rounding/constant"
 	"math"
+	"strings"
 )
 
 func RoundFloat64(x float64) float64 {
@@ -168,4 +169,40 @@ func RoundStr(price float64, decimal int) string {
 	str := fmt.Sprintf("%."+fmt.Sprintf("%d", decimal)+"f", f)
 
 	return str
+}
+
+func FormatFloat(stringFloat string, thousandChar string, decimalChar string, decimalNum int) string {
+	if thousandChar == "" {
+		thousandChar = ","
+	}
+	if decimalChar == "" {
+		decimalChar = "."
+	}
+	sArray := strings.Split(stringFloat , ".")
+	roundStr := sArray[0]
+	runes := []rune(roundStr)
+	newRoundNum := ""
+	index := 1
+	for i := len(runes)-1; i >= 0; i-- {
+		newRoundNum += string(runes[i])
+		if (index % 3 == 0 && index != len(runes)) {
+			newRoundNum += thousandChar
+		}
+		index += 1
+	}
+	newFloatString := ""
+	runes = []rune(newRoundNum)
+	for i := len(runes)-1; i >= 0; i-- {
+		newFloatString += string(runes[i])
+	}
+	if len(sArray) > 1 && decimalNum > 0 {
+		newFloatString += decimalChar
+		decimalStr := sArray[1]
+		runes = []rune(decimalStr)
+		for i := 0; i < decimalNum; i++ {
+			newFloatString += string(runes[i])
+		}
+	}
+
+	return newFloatString
 }
