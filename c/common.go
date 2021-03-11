@@ -185,7 +185,7 @@ func FormatFloat(stringFloat string, thousandChar string, decimalChar string, de
 	index := 1
 	for i := len(runes)-1; i >= 0; i-- {
 		newRoundNum += string(runes[i])
-		if (index % 3 == 0 && index != len(runes)) {
+		if index % 3 == 0 && index != len(runes) {
 			newRoundNum += thousandChar
 		}
 		index += 1
