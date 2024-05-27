@@ -69,7 +69,7 @@ var Currencies = map[string]models.Currency{
 	"HUF": models.Currency{Code: "HUF", Name: "Hungarian forint", Symbol: "Ft", Country: " Hungary", Decimal: 2},
 	"IDR": models.Currency{Code: "IDR", Name: "Indonesian rupiah", Symbol: "Rp", Country: " Indonesia", Decimal: 0},
 	"ILS": models.Currency{Code: "ILS", Name: "Israeli new shekel", Symbol: "₪", Country: " Israel", Decimal: 2},
-	"INR": models.Currency{Code: "INR", Name: "Indian rupee", Symbol: "₹", Country: " India,  Bhutan", Decimal: 2},
+	"INR": models.Currency{Code: "INR", Name: "Indian rupee", Symbol: "₹", Country: " India,  Bhutan", Decimal: 0},
 	"IQD": models.Currency{Code: "IQD", Name: "Iraqi dinar", Symbol: "ع.د", Country: " Iraq", Decimal: 3},
 	"IRR": models.Currency{Code: "IRR", Name: "Iranian rial", Symbol: "﷼", Country: " Iran", Decimal: 2},
 	"ISK": models.Currency{Code: "ISK", Name: "Icelandic króna", Symbol: "Kr", Country: " Iceland", Decimal: 0},
